@@ -23,10 +23,8 @@ $(document).ready(function(){
   
   $("#btnPreload").click(function(){
   	var url = $("#example-preload").val();
-  	alert(url)
-  	$.get("readCSV.js", 
+  	$.get(url, 
     	function(data) {
-    	alert(data);
         	$("#textCSV").val(data);
         });
   	
