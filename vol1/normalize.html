@@ -14,6 +14,7 @@
 
         <link rel="stylesheet" href="../css/normalize.css">
         <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="normalize.css">
         <script src="../js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
@@ -22,36 +23,31 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <h1>Volume 1: Fundamental Algorithms</h2>
+        
+        <h1>Normalization and Denormalization Ranges</h2>
+        For more information on normalization, see <a href="http://www.heatonresearch.com/wiki/Range_Normalization">this article</a>. The following paramaters are common to both normalization and denormalization.<br>
+		Data High: <input type="text" id="dataHigh" value="100"><br>
+		Data Low: <input type="text" id="dataLow" value="0"><br>
+		Normalized High: <input type="text" id="normalizedHigh" value="1"><br>
+		Normalized Low: <input type="text" id="normalizedLow" value="-1"><br>
+		<h2>Normalize a Number</h2>
+		Using the above ranges, we can normalize a number.<br>
+		Number to normalize: <input type="text" id="normNum" value="5"><br>
+		Result: <input type="text" id="normResult" value="" readonly><br>
+		<input type="button" id="normButton" value="Normalize">
 		
-		<ul>
-			<li>Chapter 1: Introduction to AI
-			<ul>
-				<li><a href="readcsv.html">CSV File Lab</a></li>
-			</ul>
-			<li>Chapter 2: Normalizing Data
-			<ul>
-				<li><a href="normalize.html">Normalize/Denormalize Lab</a></li>
-				<li><a href="nominal.html">Nominal Encoding Lab</a></li>
-			</ul>
-			<li>Chapter 3: Distance Metrics
-			<ul>
-				<li><a href="ocr.html">OCR Lab</a></li>
-				<li><a href="normalize.html">Distance Metrics Lab</a></li>
-			</ul>
-			<li>Chapter 4: Random Numbers
-			<li>Chapter 5: K-Means
-			<li>Chapter 6: Error Calculation
-			<li>Chapter 7: Towards Machine Learning
-			<li>Chapter 8: Optimization Algorithms
-			<li>Chapter 9: Discrete Optimization
-			<li>Chapter 10: Linear Regression
-		</ul>		
-		
+		<h2>Denormalize a Number</h2>
+		Using the above ranges, we can denormalize a number.<br>
+		Number to normalize: <input type="text" id="deNormNum" value="0.5"><br>
+		Result: <input type="text" id="deNormResult" value="" readonly><br>
+		<input type="button" id="deNormButton" value="Denormalize">
+
+
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="../js/plugins.js"></script>
         <script src="../js/main.js"></script>
+        <script src="normalize.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
