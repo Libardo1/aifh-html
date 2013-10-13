@@ -40,7 +40,7 @@ $(document).ready(function(){
         }
         
         result[0][0] = -1;
-        result[1][0] = 1.0;
+        result[1][0] = 1;
 
         for (var k = 2; k < classCount; k++) {
             // scale the matrix so far
@@ -52,24 +52,28 @@ $(document).ready(function(){
                 }
             }
 
-            r = -1.0 / r;
+            r = -1 / r;
             for (var i = 0; i < k; i++) {
                 result[i][k - 1] = r;
             }
 
             for (var i = 0; i < k - 1; i++) {
-                result[k][i] = 0.0;
+                result[k][i] = 0;
             }
             result[k][k - 1] = 1.0;
         }
-
+        
         // scale it
-        /*for (var row = 0; row < classCount; row++) {
-            for (var col = 0; col < (classCount-1); col++) {
-                result[row][col] = ((result[row][col] - normalizedLow) / (normalizedHigh - normalizedLow))
-                        * (normalizedHigh - normalizedLow) + normalizedLow;
+        var dataLow = -1;
+        var dataHigh = 1;
+        
+        for (var row = 0; row < k; row++) {
+            for (var col = 0; col < k; col++) {
+                result[row][col] = ((result[row][col] - dataLow) 
+				/ (dataHigh - dataLow))
+				* (normalizedHigh - normalizedLow) + normalizedLow;
             }
-        }*/
+        }
     	
     	tableStr = "<table><thead><tr><th>Class</th>";
     	for(var col=0;col<(classCount-1);col++) {
